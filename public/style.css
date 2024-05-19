@@ -456,6 +456,7 @@ textarea {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+    /* position: relative; */
   }
   .navbar-logo {
     width: 100px; /* Set the desired width */
@@ -509,6 +510,7 @@ textarea {
       color: #001A4B;
       padding: 10px 0;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      /* z-index: 10; Ensure dropdown menu appears above other elements */
     }
 
   .navbar ul.active {
@@ -520,7 +522,7 @@ textarea {
     list-style: none; /* Remove default bullets */
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
+    background-color: #001A4B;
     text-align: center;
   }
 
@@ -532,16 +534,19 @@ textarea {
     padding: 10px;
     text-align: center;
     display: block;
-    color: #000000;
+    color: #ffffff;
     text-decoration: none;
+    
   }
 
   .navbar-toggler {
     display: block;
     background: none;
     border: none;
-    cursor: pointer;
+    cursor:pointer;
     padding: 10px;
+    z-index: 20; /* Ensure toggler is clickable above other elements */
+  position: relative; /* Ensure it stays in the flow of the document */
     
   }
 
