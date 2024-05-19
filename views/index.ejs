@@ -1,8 +1,4 @@
-<!-- <%- include('./Layouts/header') %>
-<br><br>
-<h1>Welcome to Documents Portal of NCET</h1>
 
-<%- include('./Layouts/footer') %> -->
 
 <%- include('./Layouts/header') %>
 
@@ -15,15 +11,31 @@
 
   
   body {
-    padding-top: 35px; /* Adjust this value to match or exceed the height of the navbar */
+    padding-top: 60px; /* Adjust this value to match or exceed the height of the navbar */
     padding-bottom: 40px;
     font-family: "Arial", sans-serif;
     color: white;
     text-align: center;
     margin: 0;
-    background-image: url('ii.jpg');
+
     background-size: cover;
     background-position: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity (last value) as needed */
+    backdrop-filter: blur(10px); /* Adjust the blur amount as needed */
+    z-index: -1; /* Ensure the pseudo-element is behind other content */
   }
   .container {
     display: flex;
@@ -35,6 +47,7 @@
     padding: 20px; /* Optional: Add padding if needed */
     box-sizing: border-box;
   }
+  
   h1 {
     font-size: 3em;
     margin-bottom: 0.5em;
@@ -49,25 +62,12 @@
     margin: 0.5em 0;
     animation: fadeInUp 1.5s;
   }
-  .btn {
-    padding: 0.75em 1.5em;
-    background-color: #ff8c00;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-    text-decoration: none;
-    animation: fadeInUp 2s;
-  }
-  .btn:hover {
-    background-color: #e07c00;
-  }
+ 
   .quote {
     font-style: italic;
     margin: 1em 0;
     animation: fadeInUp 2s;
-    color: rgb(11, 11, 11);
+    color: rgb(231, 236, 238);
     font-size: 1.01em;
   }
   .features {
@@ -83,6 +83,7 @@
     margin: 0.5em;
     width: 250px;
     animation: fadeInUp 2.5s;
+    text-align: center;
   }
   .feature img {
     width: 100px;
@@ -110,13 +111,86 @@
   }
 
   @media only screen and (max-width: 767px) {
-
     body {
-      padding-top: 250px; /* Adjust this value to match or exceed the height of the navbar */
-      background-size: auto; /* Adjust background size as needed for smaller screens */
+      padding-top: 350px; /* Adjusted value to accommodate navbar */
+      padding-bottom: 40px; /* Adjusted value to accommodate footer */
+      background-size: auto;
       padding-left: 20px;
       padding-right: 20px;
-      
+    }
+    h1 {
+      font-size: 2em;
+    }
+    p {
+      font-size: 1em;
+    }
+    .feature {
+      width: 100%; /* Ensure features take full width on small screens */
+      margin: 0.5em 0;
+    }
+  }
+
+   /* Media Query for Medium Devices (Tablets) */
+   @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    body{
+      padding-top: 100px;
+    }
+    h1 {
+      font-size: 2.2em;
+    }
+
+    p {
+      font-size: 1.1em;
+    }
+
+    .feature {
+      width: 45%; /* Two columns */
+      margin: 0.5em;
+    }
+  }
+
+  /* Media Query for Large Devices (Desktops) */
+  @media only screen and (min-width: 1024px) and (max-width) {
+    body{
+      padding-top: 150px;
+    }
+    h1 {
+      font-size: 2.5em;
+    }
+
+    p {
+      font-size: 1.3em;
+    }
+
+    .feature {
+      width: 250px;
+      margin: 0.5em;
+    }
+  }
+  @media only screen and (max-width: 480px) {
+    body {
+      padding-top: 300px; /* Adjusted value to accommodate navbar */
+      padding-bottom: 40px;
+    }
+
+    h1 {
+      font-size: 1.5em;
+    }
+
+    p {
+      font-size: 0.9em;
+    }
+
+    .feature {
+      width: 100%;
+      margin: 0.5em 0;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
     }
   }
 

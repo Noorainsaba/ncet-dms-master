@@ -38,7 +38,12 @@ mongoose.connect(process.env.MONGODB_URI, {
     client: connection.getClient(),
     collection: 'session'
 })
-
+// Initialize session store
+// const sessionStore = MongoStore.create({
+//   mongoUrl: process.env.MONGODB_URI,
+//   dbName: process.env.DB_NAME,
+//   collectionName: 'sessions',
+// });
 
 //Init session
 app.use(session({
@@ -88,6 +93,20 @@ app.post('/auth/login', (req, res, next) => {
     res.redirect('/user/profile');
   }
 });
+// app.post('/auth/login', (req, res, next) => {
+//   passport.authenticate('local', {
+//     failureRedirect: '/auth/login',
+//     failureFlash: true,
+//   })(req, res, next);
+// }, (req, res) => {
+//   // Redirect admin users to the admin page
+//   if (req.user.role === roles.admin) {
+//     res.redirect('/admin/users');
+//   } else {
+//     res.redirect('/user/profile');
+//   }
+// });
+
 
 
 app.use('/',require('./routes/index.route'))
