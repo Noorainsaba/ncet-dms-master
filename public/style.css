@@ -104,7 +104,7 @@ nav > ul > li:nth-child(3) > a:hover {
   color:#2a2929;
 }
 .navbar-logo {
-  width: 200px; /* Set the desired width */
+  width: 150px; /* Set the desired width */
   height: auto; /* Maintain aspect ratio */
 }
 
@@ -459,7 +459,7 @@ textarea {
     /* position: relative; */
   }
   .navbar-logo {
-    width: 100px; /* Set the desired width */
+    width: 130px; /* Set the desired width */
     height: auto; /* Maintain aspect ratio */
   }
   .lg-form {
@@ -510,7 +510,9 @@ textarea {
       color: #001A4B;
       padding: 10px 0;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      /* z-index: 10; Ensure dropdown menu appears above other elements */
+      background-color: #001A4B; /* Add background color for visibility */
+      z-index: 5; 
+      /* #Ensure dropdown menu appears above other elements */
     }
 
   .navbar ul.active {
@@ -524,10 +526,13 @@ textarea {
     padding: 0;
     background-color: #001A4B;
     text-align: center;
+    margin-top: 25px;
   }
 
   .navbar-menu li {
-    margin: 5px 0;
+   
+    margin: 0; /* Remove margin to ensure the full region is clickable */
+    padding: 0; /* Remove padding to ensure the full region is clickable */
   }
 
   .navbar-menu li a {
@@ -536,17 +541,21 @@ textarea {
     display: block;
     color: #ffffff;
     text-decoration: none;
+    width: 100%; /* Ensure link takes full width of its container */
     
+    cursor: pointer;
+   
   }
-
+  .navbar-menu li a:hover {
+    background-color: #0056b3; /* Add hover effect */
+}
   .navbar-toggler {
     display: block;
     background: none;
     border: none;
     cursor:pointer;
     padding: 10px;
-    z-index: 20; /* Ensure toggler is clickable above other elements */
-  position: relative; /* Ensure it stays in the flow of the document */
+    
     
   }
 
@@ -623,6 +632,7 @@ textarea {
   text-decoration: none;
   border-radius: 4px;
 }
+
 
 
 
