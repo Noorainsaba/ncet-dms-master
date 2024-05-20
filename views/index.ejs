@@ -229,7 +229,6 @@
 </div>
 
 <%- include('./Layouts/footer') %> -->
-
 <%- include('./Layouts/header') %>
 
 <style>
@@ -272,7 +271,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     text-align: center;
     /* overflow-y: auto; */
     width: 100%;
@@ -339,8 +338,14 @@
     animation: fadeInUp 2.5s;
     max-width: 250px;
     flex: 1 1 calc(33% - 1em);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
   }
   
+  .feature:hover {
+    transform: translateY(-10px);
+  }
+
   .feature img {
     width: 100px;
     height: 100px;
@@ -401,6 +406,10 @@
       width: 80px;
       height: 80px;
     }
+    .footer {
+    padding: 10px;
+    font-size: 14px; 
+    }
   }
   
   @media only screen and (max-width: 480px) { /* Extra small devices (phones, less than 480px) */
@@ -423,6 +432,10 @@
     .feature img {
       width: 50px;
       height: 50px;
+    }
+    .footer {
+    padding: 10px;
+    font-size: 10px; 
     }
   }
 
@@ -479,6 +492,13 @@
     p {
       font-size: 1em;
     }
+    .feature{
+      width: calc(100% - 1em);
+    }
+    .footer {
+    padding: 8px;
+    font-size: 8px; 
+    }
   }
 
   @media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) { /* iPhone 6/7/8 */
@@ -487,6 +507,13 @@
     }
     p {
       font-size: 1.1em;
+    }
+    .feature{
+      width: calc(100% - 1em);
+    }
+    .footer {
+    padding: 8px;
+    font-size: 8px; 
     }
   }
 
@@ -497,6 +524,13 @@
     p {
       font-size: 1.2em;
     }
+    .feature{
+      width: calc(100% - 1em);
+    }
+    .footer {
+    padding: 8px;
+    font-size: 8px; 
+    }
   }
 
   @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) { /* iPhone X, XS, 11 Pro */
@@ -505,6 +539,13 @@
     }
     p {
       font-size: 1.1em;
+    }
+    .feature{
+      width: calc(100% - 1em);
+    }
+    .footer {
+    padding: 8px;
+    font-size: 8px; 
     }
   }
 
@@ -515,6 +556,13 @@
     p {
       font-size: 1.2em;
     }
+    .feature{
+      width: calc(100% - 1em);
+    }
+    .footer {
+    padding: 8px;
+    font-size: 8px; 
+    }
   }
 
   @media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) { /* iPhone 12, 12 Pro, 13, 13 Pro */
@@ -523,6 +571,13 @@
     }
     p {
       font-size: 1.1em;
+    }
+    .feature{
+      width: calc(100% - 1em);
+    }
+    .footer {
+    padding: 8px;
+    font-size: 8px; 
     }
   }
 
@@ -533,6 +588,13 @@
     p {
       font-size: 1.2em;
     }
+    .feature{
+      width: calc(100% - 1em);
+    }
+    .footer {
+    padding: 8px;
+    font-size: 8px; 
+    }
   }
 
   @media only screen and (device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) { /* iPhone 14, 14 Pro */
@@ -542,6 +604,13 @@
     p {
       font-size: 1.15em;
     }
+    .feature{
+      width: calc(100% - 1em);
+    }
+    .footer {
+    padding: 8px;
+    font-size: 8px; 
+    }
   }
 
   @media only screen and (device-width: 432px) and (device-height: 934px) and (-webkit-device-pixel-ratio: 3) { /* iPhone 15, 15 Pro */
@@ -550,6 +619,13 @@
     }
     p {
       font-size: 1.2em;
+    }
+    .feature{
+      width: calc(100% - 1em);
+    }
+    .footer {
+    padding: 8px;
+    font-size: 8px; 
     }
   }
 </style>
