@@ -6,6 +6,7 @@ const mongoose=require('mongoose')
 const session=require('express-session')
 const connectFlash=require('connect-flash')
 const passport=require('passport')
+
 const MongoStore = require("connect-mongo")
 const dbString = "mongodb+srv://aishwaryas683:ncet_dms@dms-db.cvnk9nz.mongodb.net/?retryWrites=true&w=majority&appName=dms-db"
 const connection = mongoose.createConnection(dbString)
@@ -112,6 +113,7 @@ app.post('/auth/login', (req, res, next) => {
 app.use('/',require('./routes/index.route'))
 
 app.use('/auth',require('./routes/auth.route'))
+
 
 app.use('/user',ensureLoggedIn({redirectTo:"/auth/login"}),require('./routes/user.route'))
 

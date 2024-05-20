@@ -100,6 +100,64 @@ router.get('/profile/:userId', async (req, res, next) => {
         next(error);
     }
 });
+router.post('/profile/update', ensureLoggedIn({ redirectTo: '/auth/login' }), async (req, res, next) => {
+    try {
+        const { username, department } = req.body;
+        const userId = req.user._id;
+        await User.findByIdAndUpdate(userId, { username, department });
+        req.flash('success', 'Profile updated successfully');
+        res.redirect('/user/profile');
+    } catch (error) {
+        next(error);
+    }
+});
+router.post('/profile/update-file/:fileId', ensureLoggedIn({ redirectTo: '/auth/login' }), async (req, res, next) => {
+    try {
+        const { documentName, description, department } = req.body;
+        const userId = req.user._id;
+        const fileId = req.params.fileId;
+
+        await User.updateOne(
+            { _id: userId, "uploadedFiles._id": fileId },
+            { $set: { "uploadedFiles.$.filename": documentName, "uploadedFiles.$.description": description, "uploadedFiles.$.department": department } }
+        );
+
+        req.flash('success', 'File metadata updated successfully');
+        res.redirect('/user/profile');
+    } catch (error) {
+        next(error);
+    }
+});
+router.post('/profile/delete', ensureLoggedIn({ redirectTo: '/auth/login' }), async (req, res, next) => {
+    try {
+        const userId = req.user._id;
+        await User.findByIdAndDelete(userId);
+        req.logout();
+        req.flash('success', 'Account deleted successfully');
+        res.redirect('/');
+    } catch (error) {
+        next(error);
+    }
+});
+router.post('/profile/delete-file/:fileId', ensureLoggedIn({ redirectTo: '/auth/login' }), async (req, res, next) => {
+    try {
+        const userId = req.user._id;
+        const fileId = req.params.fileId;
+
+        await User.updateOne(
+            { _id: userId },
+            { $pull: { uploadedFiles: { _id: fileId } } }
+        );
+
+        req.flash('success', 'File deleted successfully');
+        res.redirect('/user/profile');
+    } catch (error) {
+        next(error);
+    }
+});
+
+
+
 
 
 module.exports=router

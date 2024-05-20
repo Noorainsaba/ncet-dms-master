@@ -3,7 +3,7 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 
 const User = require("../models/user.model");
-
+const bcrypt = require('bcrypt'); //change
 passport.use(
   new LocalStrategy(
     {
@@ -17,14 +17,11 @@ passport.use(
         if (!user) {
           return done(null, false, { message: "username does not registered" });
         }
-        //username exists
         const isMatch = await user.isValidPassword(password);
-
-        if (isMatch) {
-          return done(null, user);
-        } else {
-          return done(null, false, { message: "incorrect Password" });
-        }
+    if (!isMatch) {
+      return done(null, false, { message: 'Incorrect password.' });
+    }
+    return done(null, user);
       } catch (error) {
         return done(error);
       }
