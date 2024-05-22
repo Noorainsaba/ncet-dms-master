@@ -169,6 +169,7 @@ const {ensureLoggedOut,ensureLoggedIn}=require('connect-ensure-login')
 const { roles } = require('./utils/constants');
 const path=require('path')
 const app=express();
+// const methodOverride = require('method-override');
 
 app.use(morgan('dev'))
 app.set('views', path.join(__dirname, 'views'));
@@ -211,6 +212,8 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 require('./utils/passport.auth')
+
+// app.use(methodOverride('_method')); // Add method override
 
 app.use((req,res,next)=>{
 res.locals.user=req.user
