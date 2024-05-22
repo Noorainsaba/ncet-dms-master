@@ -436,26 +436,7 @@
  <%- include('./Layouts/header') %>
  <style>
    
-   .navbar {
-     position: fixed;
-     top: 0;
-     width: 100%;
-     height: 100px; /* Adjust this value to your navbar height */
-     background-color: #fff; /* Example color, adjust as needed */
-     color: white;
-     display: flex;
-     align-items: center;
-     justify-content: space-between;
-     padding: 0 20px;
-     z-index: 10;
-   }
- 
-   .navbar a {
-     color: black;
-     text-decoration: none;
-     margin: 0 15px;
-     font-size: 1em;
-   }
+   
  
    * {
      margin: 0;
@@ -468,6 +449,7 @@
      padding-bottom: 40px;
      font-family: "Arial", sans-serif;
      color: white;
+     background: radial-gradient(circle,rgba(10, 0, 0, 0.5),#021029);
      text-align: center;
      margin: 0;
      background-size: cover;
@@ -479,17 +461,7 @@
      background-repeat: no-repeat;
    }
  
-   body::before {
-     content: "";
-     position: fixed;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
-     background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity (last value) as needed */
-     backdrop-filter: blur(10px); /* Adjust the blur amount as needed */
-     z-index: -1; /* Ensure the pseudo-element is behind other content */
-   }
+  
  
    .container {
      flex: 1;
@@ -713,7 +685,6 @@
    @media only screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) { /* iPhone SE */
      body{
        padding-top: 150px;
-       background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity (last value) as needed */
        backdrop-filter: blur(10px);
      }
      h1 {
@@ -745,7 +716,6 @@
    @media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) { /* iPhone 6/7/8 */
      body{
        padding-top: 150px;
-       background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity (last value) as needed */
        backdrop-filter: blur(10px);
      }
      h1 {
@@ -777,7 +747,6 @@
    @media only screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) { /* iPhone 6/7/8 Plus */
      body{
        padding-top: 150px;
-       background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity (last value) as needed */
        backdrop-filter: blur(10px);
      }
      h1 {
@@ -809,7 +778,6 @@
    @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) { /* iPhone X, XS, 11 Pro */
      body{
        padding-top: 150px;
-       background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity (last value) as needed */
        backdrop-filter: blur(10px);
      }
      h1 {
@@ -841,7 +809,6 @@
    @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) { /* iPhone XR, XS Max, 11, 11 Pro Max */
      body{
        padding-top: 150px;
-       background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity (last value) as needed */
        backdrop-filter: blur(10px);
      }
      h1 {
@@ -873,7 +840,6 @@
    @media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) { /* iPhone 12, 12 Pro, 13, 13 Pro */
      body{
        padding-top: 150px;
-       background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity (last value) as needed */
        backdrop-filter: blur(10px);
      }
      h1 {
@@ -905,7 +871,6 @@
    @media only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) { /* iPhone 12 Pro Max, 13 Pro Max, 14 Pro Max */
      body{
        padding-top: 150px;
-       background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity (last value) as needed */
        backdrop-filter: blur(10px);
      }
      h1 {
@@ -937,7 +902,6 @@
    @media only screen and (device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) { /* iPhone 14, 14 Pro */
      body{
        padding-top: 150px;
-       background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity (last value) as needed */
        backdrop-filter: blur(10px);
      }
      h1 {
@@ -969,7 +933,6 @@
    @media only screen and (device-width: 432px) and (device-height: 934px) and (-webkit-device-pixel-ratio: 3) { /* iPhone 15, 15 Pro */
      body{
        padding-top: 150px;
-       background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity (last value) as needed */
        backdrop-filter: blur(10px);
      }
      h1 {
