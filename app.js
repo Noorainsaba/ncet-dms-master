@@ -223,6 +223,20 @@ app.use((req,res,next)=>{
   next();
 })
 
+app.post('/auth/login', (req, res, next) => {
+  passport.authenticate('local', {
+    failureRedirect: '/auth/login',
+    failureFlash: true,
+  })(req, res, next);
+}, (req, res) => {
+  // Redirect admin users to the admin page
+  if (req.user.role === roles.admin) {
+    res.redirect('/admin/users');
+  } else {
+    res.redirect('/user/profile');
+  }
+});
+
 app.use('/',require('./routes/index.route'))
 
 app.use('/auth',require('./routes/auth.route'))
