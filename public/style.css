@@ -15,7 +15,7 @@ body {
   padding-top: 80px; /* Adjust this value to match or exceed the height of the navbar */
   /* background: linear-gradient(to right, #ff7e5f, #feb47b); */
   /* background: radial-gradient(circle, #e1d6d4, #1b1c42); Adjust the shape and colors as needed */
-  background: radial-gradient(circle,rgba(0, 0, 0, 0.5),#001A4B);
+  background: radial-gradient(circle, #e1d6d4,#001A4B);
   font-family: 'Space Mono', monospace;
   font-family: 'Open Sans', sans-serif;
   position: relative;
@@ -47,7 +47,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle,rgba(0, 0, 0, 0.5),#001A4B); /* Adjust the opacity (last value) as needed */
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity (last value) as needed */
   backdrop-filter: blur(10px); /* Adjust the blur amount as needed */
   z-index: -1; /* Ensure the pseudo-element is behind other content */
 }
